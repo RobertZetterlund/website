@@ -1,26 +1,50 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import posed from "react-pose";
+import "./styles.css";
 
-function App() {
+const Box = posed.div({
+  hidden: { opacity: 0.5 },
+  visible: { opacity: 1 },
+  pressable: true,
+  press: { scale: 1.4 },
+
+  hoverable: true,
+  init: {
+    scale: 1,
+    boxShadow: "0px 0px 0px rgba(0,0,0,0)"
+  },
+  hover: {
+    scale: 1.2,
+    boxShadow: "0px 5px 10px rgba(0,0,0,0.2)"
+  },
+  focusable: true,
+  focus: {
+    color: "#000",
+    outlineWidth: "12px",
+    outlineOffset: "5px",
+    outlineColor: "#AB36FF",
+    scale: 2
+  }
+});
+
+const Example = () => {
+  const [isVisible, setVisible] = useState(true);
+
+  useEffect(() => {
+    setInterval(() => {
+      setVisible(!isVisible);
+    }, 10000);
+  });
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      class="home-grid"
+    >
+      <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+      <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+      <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+      <Box className="box" pose={isVisible ? "visible" : "hidden"} />
     </div>
   );
-}
+};
 
-export default App;
+export default Example;
