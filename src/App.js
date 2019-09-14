@@ -6,7 +6,7 @@ const Box = posed.div({
   hidden: { opacity: 0.5 },
   visible: { opacity: 1 },
   pressable: true,
-  press: { scale: 1.4 },
+  press: { scale: 1.2 },
 
   hoverable: true,
   init: {
@@ -14,36 +14,28 @@ const Box = posed.div({
     boxShadow: "0px 0px 0px rgba(0,0,0,0)"
   },
   hover: {
-    scale: 1.2,
+    scale: 1.1,
     boxShadow: "0px 5px 10px rgba(0,0,0,0.2)"
   },
-  focusable: true,
-  focus: {
-    color: "#000",
-    outlineWidth: "12px",
-    outlineOffset: "5px",
-    outlineColor: "#AB36FF",
-    scale: 2
-  }
 });
 
 const Example = () => {
   const [isVisible, setVisible] = useState(true);
 
-  useEffect(() => {
+  /*useEffect(() => {
     setInterval(() => {
       setVisible(!isVisible);
     }, 10000);
-  });
+  });*/
   return (
     <div class="grid-container">
       <div class="grid-row">
-        <Box className="box" pose={isVisible ? "visible" : "hidden"} />
-        <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+        <Box className="box" style={{background: "#f8b88b"}} pose={isVisible ? "visible" : "hidden"} />
+        <Box className="box" style={{background: "#b2cefe"}} pose={isVisible ? "visible" : "hidden"} />
       </div>
       <div class="grid-row ">
-        <Box className="box" pose={isVisible ? "visible" : "hidden"} />
-        <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+        <Box className="box" style={{background: "#faf884"}} pose={isVisible ? "visible" : "hidden"} />
+        <Box className="box" style={{background: "#baed91"}} pose={isVisible ? "visible" : "hidden"} />
       </div>
     </div>
   );

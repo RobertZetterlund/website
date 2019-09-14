@@ -9,11 +9,12 @@ body {
   }
   
   .box {
-	width: 100px;
-	height: 100px;
+	width: 200px;
+	height: 200px;
 	background: #ff1c68;
 	transform-origin: 50% 50%;
-	margin: 10px;
+	margin: 25px;
+	border-radius: 5%
 
   }
   
