@@ -36,13 +36,15 @@ const Example = () => {
     }, 10000);
   });
   return (
-    <div
-      class="home-grid"
-    >
-      <Box className="box" pose={isVisible ? "visible" : "hidden"} />
-      <Box className="box" pose={isVisible ? "visible" : "hidden"} />
-      <Box className="box" pose={isVisible ? "visible" : "hidden"} />
-      <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+    <div class="grid-container">
+      <div class="grid-row">
+        <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+        <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+      </div>
+      <div class="grid-row ">
+        <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+        <Box className="box" pose={isVisible ? "visible" : "hidden"} />
+      </div>
     </div>
   );
 };
