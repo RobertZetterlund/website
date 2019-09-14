@@ -16,29 +16,58 @@ const Box = posed.div({
   hover: {
     scale: 1.1,
     boxShadow: "0px 5px 10px rgba(0,0,0,0.2)"
-  },
+  }
 });
 
-const Example = () => {
-  const [isVisible, setVisible] = useState(true);
+const Boxes = () => {
+  const [isFocused, setFocused] = useState(true);
 
-  /*useEffect(() => {
-    setInterval(() => {
-      setVisible(!isVisible);
-    }, 10000);
-  });*/
   return (
-    <div class="grid-container">
-      <div class="grid-row">
-        <Box className="box" style={{background: "#f8b88b"}} pose={isVisible ? "visible" : "hidden"} />
-        <Box className="box" style={{background: "#b2cefe"}} pose={isVisible ? "visible" : "hidden"} />
-      </div>
-      <div class="grid-row ">
-        <Box className="box" style={{background: "#faf884"}} pose={isVisible ? "visible" : "hidden"} />
-        <Box className="box" style={{background: "#baed91"}} pose={isVisible ? "visible" : "hidden"} />
+    <div class="grid-background">
+		
+		<div class="content-about" >
+			<h1 style={{fontFamily: "sans-serif"}}>Hej! 💻 </h1>
+			<h2 style={{fontFamily: "sans-serif"}}>Mitt namn är Robert!</h2>
+			<p style={{fontFamily: "sans-serif"}}> Här är text som är ombyttbar</p>
+			<p style={{fontFamily: "sans-serif"}}> Här är lite till ipsum lorem</p>
+			<p style={{fontFamily: "sans-serif"}}> en blå länk?</p>
+
+
+		</div>
+
+
+      <div class="grid-container" >
+        <div class="grid-row">
+          <Box
+            className="box"
+            style={{ background: "#f8b88b" }}
+            onPressStart={() => setFocused(0)}
+            pose={isFocused == 0 ? "visible" : "hidden"}
+          />
+          <Box
+            className="box"
+            onPressStart={() => setFocused(1)}
+            style={{ background: "#b2cefe" }}
+            pose={isFocused == 1 ? "visible" : "hidden"}
+          />
+        </div>
+        <div class="grid-row ">
+          <Box
+            className="box"
+            onPressStart={() => setFocused(2)}
+            style={{ background: "#faf884" }}
+            pose={isFocused == 2 ? "visible" : "hidden"}
+          />
+          <Box
+            className="box"
+            onPressStart={() => setFocused(3)}
+            style={{ background: "#baed91" }}
+            pose={isFocused == 3 ? "visible" : "hidden"}
+          />
+        </div>
       </div>
     </div>
   );
 };
 
-export default Example;
+export default Boxes;
