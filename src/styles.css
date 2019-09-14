@@ -41,7 +41,6 @@ body {
 /* Background  */  
   .grid-background {
 	display: flex;
-	grid-template-columns: auto;
 	width: 100%;
 	height: 100%;
 	background-color: "green";
@@ -51,7 +50,8 @@ body {
 /* Content, about me */
 
 .content-about {
-	width: 70%;
+	width: 100%;
+	margin-top: 15%
 }
 
 
