@@ -1,20 +1,9 @@
 import React, { useState } from "react";
-import posed from "react-pose";
 import "./styles.css";
 import "boxicons";
 import About from "./about";
 import BoxContent from "./BoxContent";
-
-const Icon = posed.div({
-  hoverable: true,
-  pressable: true,
-  init: {
-    scale: 1
-  },
-  hover: {
-    scale: 1.2
-  }
-});
+import ContactIcon from "./contactIcon";
 
 const HomePage = () => {
   const [isFocused, setFocused] = useState(0);
@@ -27,21 +16,20 @@ const HomePage = () => {
             <About index={isFocused} />
           </div>
           <div class="social">
-            <a href="https://github.com/RobertZetterlund">
-              <Icon>
-                <box-icon name="github" type="logo" size="md"></box-icon>
-              </Icon>
-            </a>
-            <a href="https://www.linkedin.com/in/robert-zetterlund-a3bb6717a/">
-              <Icon>
-                <box-icon type="logo" name="linkedin" size="md"></box-icon>{" "}
-              </Icon>
-            </a>
-            <a href="mailto:robert.zetterlund@outlook.com">
-              <Icon>
-                <box-icon name="mail-send" size="md"></box-icon>
-              </Icon>
-            </a>
+            <ContactIcon
+              href={"https://github.com/RobertZetterlund"}
+              name="github"
+              type="logo"
+            />
+            <ContactIcon
+              href={"https://www.linkedin.com/in/robert-zetterlund-a3bb6717a/"}
+              name="linkedin"
+              type="logo"
+            />
+            <ContactIcon
+              href={"mailto:robert.zetterlund@outlook.com"}
+              name="mail-send"
+            />
           </div>
         </div>
 
