@@ -26,6 +26,9 @@ body {
   height: 250px;
   transform-origin: 50% 50%;
   border-radius: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Background-boxes  */
@@ -53,7 +56,7 @@ body {
 	margin: 0px;
 	min-height: 100%;
 	width: 100%;
-	background: #3322ff;
+	background: #8392AB;
  }
 
 /* Content, about me */

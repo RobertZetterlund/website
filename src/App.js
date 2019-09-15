@@ -6,7 +6,7 @@ import info from "./info";
 import "boxicons";
 
 const Box = posed.div({
-  hidden: { opacity: 0.5 },
+  hidden: { opacity: 0.65 },
   visible: { opacity: 1 },
   pressable: true,
   press: { scale: 1.2 },
@@ -19,7 +19,8 @@ const Box = posed.div({
   hover: {
     scale: 1.1,
     boxShadow: "0px 5px 10px rgba(0,0,0,0.2)"
-  }
+  },
+
 });
 
 const Icon = posed.div({
@@ -33,18 +34,18 @@ const Icon = posed.div({
   }
 });
 
-const Boxes = () => {
+const HomePage = () => {
   const [isFocused, setFocused] = useState(0);
 
   return (
-    <body>
+    <body >
       <div class="grid-background">
         <div class="content-about">
           <div class="Text-about">
             <h1
               style={{
                 fontFamily: "sans-serif",
-                margin: "10px",
+                margin: "15px",
                 fontSize: "42px"
               }}
             >
@@ -53,7 +54,7 @@ const Boxes = () => {
             <h2
               style={{
                 fontFamily: "sans-serif",
-                margin: "10px",
+                margin: "15px",
                 fontSize: "28px"
               }}
             >
@@ -62,7 +63,7 @@ const Boxes = () => {
             <p
               style={{
                 fontFamily: "sans-serif",
-                margin: "10px",
+                margin: "15px",
                 fontSize: "20px"
               }}
             >
@@ -71,7 +72,7 @@ const Boxes = () => {
 			<a href={info[isFocused].linkto}>
 				<p style={{
                 fontFamily: "sans-serif",
-                margin: "10px",
+                margin: "15px",
                 fontSize: "20px"
               }}>
 			  	{info[isFocused].linktext}
@@ -101,34 +102,44 @@ const Boxes = () => {
           <Fade>
             <Box
               className="box"
-              style={{ background: "#f8b88b" }}
+              style={{ background: "#1A3768"}}
               onPressStart={() => setFocused(0)}
               pose={isFocused === 0 ? "visible" : "hidden"}
-            />
+            >
+			<box-icon name='bot' color= "#ffffff" size="100px"></box-icon>
+
+			</Box>
           </Fade>
           <Fade>
             <Box
               className="box"
               onPressStart={() => setFocused(1)}
-              style={{ background: "#b2cefe" }}
+              style={{ background: "#902B66" }}
               pose={isFocused === 1 ? "visible" : "hidden"}
-            />
+            >
+			<box-icon name='mobile-alt' color="#ffffff" size="100px" ></box-icon>
+			  </Box>
           </Fade>
           <Fade>
             <Box
               className="box"
               onPressStart={() => setFocused(2)}
-              style={{ background: "#faf884" }}
+              style={{ background: "#B57236" }}
               pose={isFocused === 2 ? "visible" : "hidden"}
-            />
+            >
+			<box-icon type='solid' name='calendar-event' color="#ffffff" size="100px"></box-icon>
+
+			</Box>
           </Fade>
           <Fade>
             <Box
               className="box"
               onPressStart={() => setFocused(3)}
-              style={{ background: "#baed91" }}
+              style={{ background: "#5C9F30" }}
               pose={isFocused === 3 ? "visible" : "hidden"}
-            />
+            >
+			<box-icon name='world' size="100px" color="#ffffff"></box-icon>
+			</Box>
           </Fade>
         </div>
       </div>
@@ -136,4 +147,4 @@ const Boxes = () => {
   );
 };
 
-export default Boxes;
+export default HomePage;
