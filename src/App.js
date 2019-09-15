@@ -25,16 +25,26 @@ const Boxes = () => {
   const [isFocused, setFocused] = useState(0);
 
   return (
-    <div class="grid-background">
-      <div class="content-about">
-        <h1 style={{ fontFamily: "sans-serif" }}> {info[isFocused].title} </h1>
-        <h2 style={{ fontFamily: "sans-serif" }}>{info[isFocused].subtitle}</h2>
-        <p style={{ fontFamily: "sans-serif" }}>{info[isFocused].paragraph}</p>
-        <p style={{ fontFamily: "sans-serif" }}> en blå länk?</p>
-      </div>
+    <body >
+      <div class="grid-background">
+        <div class="content-about">
+          <h1 style={{ fontFamily: "sans-serif" }}>
+            {" "}
+            {info[isFocused].title}{" "}
+          </h1>
+          <h2 style={{ fontFamily: "sans-serif" }}>
+            {info[isFocused].subtitle}
+          </h2>
+          <p style={{ fontFamily: "sans-serif" }}>
+            {info[isFocused].paragraph}
+          </p>
+          <p style={{ fontFamily: "sans-serif" }}> en blå länk?</p>
+		  <div class="social">
 
-      <div class="grid-container">
-        <div class="grid-row">
+		  </div>
+        </div>
+
+        <div class="box-container">
           <Fade>
             <Box
               className="box"
@@ -51,8 +61,6 @@ const Boxes = () => {
               pose={isFocused === 1 ? "visible" : "hidden"}
             />
           </Fade>
-        </div>
-        <div class="grid-row ">
           <Fade>
             <Box
               className="box"
@@ -71,7 +79,7 @@ const Boxes = () => {
           </Fade>
         </div>
       </div>
-    </div>
+    </body>
   );
 };
 
