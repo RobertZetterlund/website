@@ -1,18 +1,22 @@
 const info = [
 	{
-		title: "Hey! 💻",
-		subtitle: "some sample text",
-		paragraph: "här utvecklar jag mer!"
+		title: "Hej! 💻",
+		subtitle: "Jag är Robert Zetterlund",
+		paragraph: "Jag studerar tredje året informationsteknik på Chalmers Tekniska Högskola, på min fritid spelar jag piano, läser böcker och programmerar."
 	},
 	{
 		title: "Expresso ☕️",
-		subtitle: "some morrrr text",
-		paragraph: "här utvecklar jag mer!"
+		subtitle: "React Native projekt",
+		paragraph: "I ett scrum-team om 8 personer utvecklade jag på 8 veckor Expresso för att effektivisera och göra kaffedrickandet på Chalmers mer miljömedvetet.",
+		linkto: "https://github.com/MarkusPettersson98/Expresso",
+		linktext: "Gå till projektet på GitHub"
 	},
 	{
-		title: "Scheduler 📆",
-		subtitle: "some leelele text",
-		paragraph: "här utvecklar jag mer!"
+		title: "Ica_Schema 📆",
+		subtitle: "Personligt projekt i Java",
+		paragraph: "Ett program som omvandlar ICAs timarbetares sommarscheman från excel-fil till iCalender-events.",
+		linkto: "https://github.com/RobertZetterlund/ica_schema",
+		linktext: "Gå till projektet på GitHub"
 	},
 	{
 		title: "Hobbies 🎹",

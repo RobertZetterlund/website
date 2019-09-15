@@ -3,6 +3,7 @@ import posed from "react-pose";
 import "./styles.css";
 import Fade from "react-reveal/Fade";
 import info from "./info";
+import "boxicons";
 
 const Box = posed.div({
   hidden: { opacity: 0.5 },
@@ -21,27 +22,79 @@ const Box = posed.div({
   }
 });
 
+const Icon = posed.div({
+  hoverable: true,
+  pressable: true,
+  init: {
+    scale: 1
+  },
+  hover: {
+    scale: 1.2
+  }
+});
+
 const Boxes = () => {
   const [isFocused, setFocused] = useState(0);
 
   return (
-    <body >
+    <body>
       <div class="grid-background">
         <div class="content-about">
-          <h1 style={{ fontFamily: "sans-serif" }}>
-            {" "}
-            {info[isFocused].title}{" "}
-          </h1>
-          <h2 style={{ fontFamily: "sans-serif" }}>
-            {info[isFocused].subtitle}
-          </h2>
-          <p style={{ fontFamily: "sans-serif" }}>
-            {info[isFocused].paragraph}
-          </p>
-          <p style={{ fontFamily: "sans-serif" }}> en blå länk?</p>
-		  <div class="social">
-
-		  </div>
+          <div class="Text-about">
+            <h1
+              style={{
+                fontFamily: "sans-serif",
+                margin: "10px",
+                fontSize: "42px"
+              }}
+            >
+              {info[isFocused].title}{" "}
+            </h1>
+            <h2
+              style={{
+                fontFamily: "sans-serif",
+                margin: "10px",
+                fontSize: "28px"
+              }}
+            >
+              {info[isFocused].subtitle}
+            </h2>
+            <p
+              style={{
+                fontFamily: "sans-serif",
+                margin: "10px",
+                fontSize: "20px"
+              }}
+            >
+              {info[isFocused].paragraph}
+            </p>
+			<a href={info[isFocused].linkto}>
+				<p style={{
+                fontFamily: "sans-serif",
+                margin: "10px",
+                fontSize: "20px"
+              }}>
+			  	{info[isFocused].linktext}
+				</p>
+			</a>
+          </div>
+          <div class="social">
+            <a href="https://github.com/RobertZetterlund">
+              <Icon>
+                <box-icon name="github" type="logo" size="md"></box-icon>
+              </Icon>
+            </a>
+            <a href="https://www.linkedin.com/in/robert-zetterlund-a3bb6717a/">
+              <Icon>
+                <box-icon type="logo" name="linkedin" size="md"></box-icon>{" "}
+              </Icon>
+            </a>
+            <a href="mailto:robert.zetterlund@outlook.com">
+              <Icon>
+                <box-icon name="mail-send" size="md"></box-icon>
+              </Icon>
+            </a>
+          </div>
         </div>
 
         <div class="box-container">
