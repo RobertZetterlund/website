@@ -1,27 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import posed from "react-pose";
 import "./styles.css";
-import Fade from "react-reveal/Fade";
-import info from "./info";
 import "boxicons";
-
-const Box = posed.div({
-  hidden: { opacity: 0.65 },
-  visible: { opacity: 1 },
-  pressable: true,
-  press: { scale: 1.2 },
-
-  hoverable: true,
-  init: {
-    scale: 1,
-    boxShadow: "0px 0px 0px rgba(0,0,0,0)"
-  },
-  hover: {
-    scale: 1.1,
-    boxShadow: "0px 5px 10px rgba(0,0,0,0.2)"
-  },
-
-});
+import About from "./about";
+import BoxContent from "./BoxContent";
 
 const Icon = posed.div({
   hoverable: true,
@@ -38,46 +20,11 @@ const HomePage = () => {
   const [isFocused, setFocused] = useState(0);
 
   return (
-    <body >
+    <body>
       <div class="grid-background">
         <div class="content-about">
           <div class="Text-about">
-            <h1
-              style={{
-                fontFamily: "sans-serif",
-                margin: "15px",
-                fontSize: "42px"
-              }}
-            >
-              {info[isFocused].title}{" "}
-            </h1>
-            <h2
-              style={{
-                fontFamily: "sans-serif",
-                margin: "15px",
-                fontSize: "28px"
-              }}
-            >
-              {info[isFocused].subtitle}
-            </h2>
-            <p
-              style={{
-                fontFamily: "sans-serif",
-                margin: "15px",
-                fontSize: "20px"
-              }}
-            >
-              {info[isFocused].paragraph}
-            </p>
-			<a href={info[isFocused].linkto}>
-				<p style={{
-                fontFamily: "sans-serif",
-                margin: "15px",
-                fontSize: "20px"
-              }}>
-			  	{info[isFocused].linktext}
-				</p>
-			</a>
+            <About index={isFocused} />
           </div>
           <div class="social">
             <a href="https://github.com/RobertZetterlund">
@@ -99,48 +46,30 @@ const HomePage = () => {
         </div>
 
         <div class="box-container">
-          <Fade>
-            <Box
-              className="box"
-              style={{ background: "#1A3768"}}
-              onPressStart={() => setFocused(0)}
-              pose={isFocused === 0 ? "visible" : "hidden"}
-            >
-			<box-icon name='bot' color= "#ffffff" size="100px"></box-icon>
-
-			</Box>
-          </Fade>
-          <Fade>
-            <Box
-              className="box"
-              onPressStart={() => setFocused(1)}
-              style={{ background: "#902B66" }}
-              pose={isFocused === 1 ? "visible" : "hidden"}
-            >
-			<box-icon name='mobile-alt' color="#ffffff" size="100px" ></box-icon>
-			  </Box>
-          </Fade>
-          <Fade>
-            <Box
-              className="box"
-              onPressStart={() => setFocused(2)}
-              style={{ background: "#B57236" }}
-              pose={isFocused === 2 ? "visible" : "hidden"}
-            >
-			<box-icon type='solid' name='calendar-event' color="#ffffff" size="100px"></box-icon>
-
-			</Box>
-          </Fade>
-          <Fade>
-            <Box
-              className="box"
-              onPressStart={() => setFocused(3)}
-              style={{ background: "#5C9F30" }}
-              pose={isFocused === 3 ? "visible" : "hidden"}
-            >
-			<box-icon name='world' size="100px" color="#ffffff"></box-icon>
-			</Box>
-          </Fade>
+          <BoxContent
+            color="#1A3768"
+            onClick={() => setFocused(0)}
+            pose={isFocused === 0 ? "visible" : "hidden"}
+            icon="bot"
+          />
+          <BoxContent
+            color="#902B66"
+            onClick={() => setFocused(1)}
+            pose={isFocused === 1 ? "visible" : "hidden"}
+            icon="mobile-alt"
+          />
+          <BoxContent
+            color="#B57236"
+            onClick={() => setFocused(2)}
+            pose={isFocused === 2 ? "visible" : "hidden"}
+            icon="calendar-event"
+          />
+          <BoxContent
+            color="#5C9F30"
+            onClick={() => setFocused(3)}
+            pose={isFocused === 3 ? "visible" : "hidden"}
+            icon="world"
+          />
         </div>
       </div>
     </body>

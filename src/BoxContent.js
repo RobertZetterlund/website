@@ -1,12 +1,8 @@
-import React, { Component, useState, useEffect } from "react";
+import React from "react";
 import posed from "react-pose";
 import "./styles.css";
 import Fade from "react-reveal/Fade";
-import info from "./info";
 import "boxicons";
-import {selectSquare} from "./redux/actions"
-import { connect } from 'react-redux';
-
 
 const Box = posed.div({
   hidden: { opacity: 0.5 },
@@ -25,29 +21,19 @@ const Box = posed.div({
   }
 });
 
-const BoxContent = ({props}) => {
+const BoxContent = ({ onClick, color, icon, pose }) => {
   return (
     <Fade>
       <Box
         className="box"
-        style={{ background: "#f8b88b" }}
-        onPressStart={() => console.log(props)}
-        pose={"visible"}
-      />
+        style={{ background: color }}
+        onPressStart={() => onClick()}
+        pose={pose}
+      >
+        <box-icon name={icon} color="#ffffff" size="100px"></box-icon>
+      </Box>
     </Fade>
   );
-};	
+};
 
-
-const mapDispatchToProps = dispatch => {
-	return {
-        onChangeState: (index) => {
-            return dispatch(selectSquare(index));
-		}
-	}
-}
-
-
-export default connect(
-    mapDispatchToProps,
-)(BoxContent);
+export default BoxContent;
