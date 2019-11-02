@@ -14,7 +14,7 @@ const textAbout = (index) =>{
           <Fade bottom>
             <h1
               style={{
-                fontFamily: "sans-serif",
+                fontFamily: "'Roboto', sans-serif",
                 margin: "15px",
                 fontSize: "42px"
               }}
@@ -25,7 +25,7 @@ const textAbout = (index) =>{
           <Fade bottom>
             <h2
               style={{
-                fontFamily: "sans-serif",
+                fontFamily: "'Roboto', sans-serif",
                 margin: "15px",
                 fontSize: "28px"
               }}
@@ -36,7 +36,7 @@ const textAbout = (index) =>{
           <Fade bottom>
             <p
               style={{
-                fontFamily: "sans-serif",
+                fontFamily: "'Roboto', sans-serif",
                 margin: "15px",
                 fontSize: "20px"
               }}
@@ -48,7 +48,7 @@ const textAbout = (index) =>{
             <a href={info[index].linkto}>
               <p
                 style={{
-                  fontFamily: "sans-serif",
+                  fontFamily: "'Roboto', sans-serif",
                   margin: "15px",
                   fontSize: "20px"
                 }}
