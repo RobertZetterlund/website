@@ -1,29 +1,31 @@
 const info = [
 	{
-		title: "Hej! 👋",
-		subtitle: "Jag är Robert Zetterlund",
-		paragraph: "Jag studerar tredje året informationsteknik på Chalmers Tekniska Högskola, på min fritid spelar jag piano, läser böcker och programmerar."
+		title: "Hey! 👋",
+		subtitle: "I'm Robert Zetterlund",
+		paragraph: "I'm studying my third year in Software Engineering at Chalmers University och Technology. In my free time i enjoy playing piano, reading books and programming"
 	},
 	{
-		title: "Expresso ☕️",
-		subtitle: "React Native projekt",
-		paragraph: "I ett scrum-team om 8 personer utvecklade jag på 8 veckor appen Expresso för att effektivisera och göra kaffedrickandet på Chalmers mer miljömedvetet.",
+		title: "Expresso",
+		subtitle: "React Native Project",
+		paragraph: "Using scrum in a team of eight people, I developed the app Expresso to facilitate the process of ordering coffee using multiple-use coffee cups to improve the sustainability on campus.",
 		linkto: "https://github.com/MarkusPettersson98/Expresso",
-		linktext: "Gå till projektet på GitHub"
+		linktext: "Head to the project on GitHub!"
 	},
 	{
-		title: "Ica_Schema 📆",
-		subtitle: "Personligt projekt i Java",
-		paragraph: "Ett program som omvandlar ICAs timarbetares sommarscheman från excel-fil till iCalender-events.",
+		title: "Ica_Schema",
+		subtitle: "Personal project in Java",
+		paragraph: "A program that translates scheduling written in Excel to iCalendar to help coworkers get their schedules on their phones.",
 		linkto: "https://github.com/RobertZetterlund/ica_schema",
-		linktext: "Gå till projektet på GitHub"
+		linktext: "Head to the project on GitHub!"
+
 	},
 	{
-		title: "CETAC 🇺🇸🇨🇦",
-		subtitle: "Medlem i CETAC",
-		paragraph: "Under mitt tredje år är jag medlem i CETAC. CETAC sammanlänkar studenter på Chalmers och företag i Nord-Amerika.",
+		title: "CETAC",
+		subtitle: "Part of CETAC",
+		paragraph: "During my third year at Chalmers I am part of the Chalmers Engineering Trainee Appointment Committee",
 		linkto: "https://cetac.se/",
-		linktext: "Gå till CETAC:s hemsida"
+		linktext: "Go to the CETAC website!"
+
 	}
 ];
 
